@@ -6,6 +6,6 @@ genInstall.install('GRCh37')
 from SigProfilerMatrixGenerator.scripts import SigProfilerMatrixGeneratorFunc as matGen
 matGen.SigProfilerMatrixGeneratorFunc("LUAD_US", 
 									  "GRCh37", 
-									  "somatic_mutation_folder", 
+									  "input_example/somatic_mutation", 
 									  output_directory = "LUAD_res")
 

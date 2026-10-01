@@ -1,6 +1,6 @@
 from SigProfilerAssignment import Analyzer as Analyze
 
-Analyze.cosmic_fit("somatic_mutation_folder", 
+Analyze.cosmic_fit("input_example/somatic_mutation", 
 				   "LUAD_decomposed_assignment_to_mutations", 
 				   input_type = "vcf", 
 				   context_type= "288", 
