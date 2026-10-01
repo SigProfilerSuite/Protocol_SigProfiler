@@ -8,4 +8,6 @@ sigCl.analysis("LUAD_US",
 			   "96", 
 			   ["96"], 
 			   "LUAD_res/", 
-			   subClassify=True)
+			   subClassify=True, 
+			   max_cpu=5, 
+			   includedVAFs=False)
