@@ -1,10 +1,10 @@
 from SigProfilerAssignment import Analyzer as Analyze
 
-Analyze.cosmic_fit("input_example/somatic_mutation", 
-				   "LUAD_decomposed_assignment_to_mutations", 
+Analyze.cosmic_fit(samples = "input_example/somatic_mutation", 
+				   output = "LUAD_decomposed_assignment_to_mutations", 
 				   input_type = "vcf", 
-				   context_type= "288", 
+				   context_type = "288", 
 				   signature_database = "LUAD_US_optimized_decomposition/Decompose_Solution/Signatures/Decompose_Solution_Signatures.txt", 
 				   genome_build = "GRCh37",
 				   export_probabilities_per_mutation = True,
-                   collapse_to_SBS96 = True)
+				   collapse_to_SBS96 = True)

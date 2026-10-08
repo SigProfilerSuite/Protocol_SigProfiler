@@ -1,29 +1,29 @@
 import sigProfilerPlotting as sigPlt
 
-sigPlt.plotSBS("LUAD_res/SBS/LUAD_US.SBS288.all",
-			   "LUAD_plots/",
-			   "LUAD_US",
-			   "288",
+sigPlt.plotSBS(matrix_path = "LUAD_res/SBS/LUAD_US.SBS288.all",
+			   output_path = "LUAD_plots/",
+			   project = "LUAD_US",
+			   plot_type = "288",
 			   percentage = False)
 
-sigPlt.plotID("input_example/matrices/LUAD.ID83.all",
-			  "LUAD_plots/",
-			  "LUAD_US",
-			  "83",
+sigPlt.plotID(matrix_path = "input_example/matrices/LUAD.ID83.all",
+			  output_path = "LUAD_plots/",
+			  project = "LUAD_US",
+			  plot_type = "83",
 			  percentage = False)
 
-sigPlt.plotDBS("input_example/matrices/LUAD.DBS78.all",
-			   "LUAD_plots/",
-			   "LUAD_US",
-			   "78",
+sigPlt.plotDBS(matrix_path = "input_example/matrices/LUAD.DBS78.all",
+			   output_path = "LUAD_plots/",
+			   project = "LUAD_US",
+			   plot_type = "78",
 			   percentage = False)
 
-sigPlt.plotCNV("input_example/matrices/LUAD.CNV48.matrix.tsv",
-			   "LUAD_plots/",
-			   "LUAD_US",
+sigPlt.plotCNV(matrix_path = "input_example/matrices/LUAD.CNV48.matrix.tsv",
+			   output_path = "LUAD_plots/",
+			   project = "LUAD_US",
 			   percentage = False)
 
-sigPlt.plotSV("input_example/matrices/LUAD.SV32.matrix.tsv",
-			  "LUAD_plots/",
-			  "LUAD_US",
+sigPlt.plotSV(matrix_path = "input_example/matrices/LUAD.SV32.matrix.tsv",
+			  output_path = "LUAD_plots/",
+			  project = "LUAD_US",
 			  percentage = False)

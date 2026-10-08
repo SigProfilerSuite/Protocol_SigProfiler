@@ -1,7 +1,7 @@
 from SigProfilerAssignment import Analyzer as Analyze
 
-Analyze.cosmic_fit("input_example/refitting/refitting_example.txt",
-				   "LUAD_cosmic_refitting",
+Analyze.cosmic_fit(samples = "input_example/refitting/refitting_example.txt",
+				   output = "LUAD_cosmic_refitting",
 				   input_type = "matrix",
 				   context_type = "96",
 				   genome_build = "GRCh37",
