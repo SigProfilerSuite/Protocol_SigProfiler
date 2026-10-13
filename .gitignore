@@ -9,11 +9,16 @@
 /LUAD_decomposed_assignment_to_mutations/
 /LUAD_plots/
 
+# Output of Box1.py (optional multimodal SBS+ID extraction)
+/LUAD_US_extraction_multimodal/
+/multimodal_SBS96_signatures.txt
+/multimodal_ID83_signatures.txt
+
 # Output of the steps that require real data (step6, step7, step16)
 /LUAD_topography/
 
 # Created inside the input folder by SigProfilerAssignment in step14
-/somatic_mutation_folder/input/
-/somatic_mutation_folder/output/
+/input_example/somatic_mutation/input/
+/input_example/somatic_mutation/output/
 
 __pycache__/
