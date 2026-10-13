@@ -28,5 +28,5 @@ if __name__ == "__main__":
 	sbs_sigs = denovo.iloc[:96]
 	id_sigs = denovo.iloc[96:]
 
-	(sbs_sigs / sbs_sigs.sum()).to_csv("multimodal_SBS96_signatures.txt", sep = "\t")
-	(id_sigs / id_sigs.sum()).to_csv("multimodal_ID83_signatures.txt", sep = "\t")
+	(sbs_sigs / sbs_sigs.sum()).to_csv("LUAD_US_extraction_multimodal/multimodal_SBS96_signatures.txt", sep = "\t")
+	(id_sigs / id_sigs.sum()).to_csv("LUAD_US_extraction_multimodal/multimodal_ID83_signatures.txt", sep = "\t")
