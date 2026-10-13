@@ -124,6 +124,12 @@ Reference results are archived in `expected_output.zip`.
 
 ## Comparing your results with the archived output
 
+> **The figures in the paper come from the original PCAWG tumours, not from this example.** Figure 2
+> cannot be reproduced from this dataset at all, because it depends on where mutations fall in the
+> genome. The extraction and assignment results behind Figure 4 are reproduced in substance, but not
+> to the last decimal — see below.
+
+
 De novo extraction uses stochastic NMF optimisation, so exact values will not reproduce. Signature
 counts, extracted profiles and assigned exposures should be very close; signature labels, their
 order, per-signature stability scores and the last decimal places of the activities will differ
