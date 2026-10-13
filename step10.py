@@ -3,4 +3,5 @@ from SigProfilerAssignment import Analyzer as Analyze
 Analyze.decompose_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all", 
 					  output = "LUAD_US_decomposition", 
 					  signatures = "LUAD_US_extraction_288/SBS288/Suggested_Solution/SBS288_De-Novo_Solution/Signatures/SBS288_De-Novo_Signatures.txt", 
-					  genome_build = "GRCh37")
+					  genome_build = "GRCh37", 
+					  cosmic_version = 3.6)
