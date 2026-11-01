@@ -1,13 +1,11 @@
 # Protocol_SigProfiler
 
-Runnable example for **"Profiling signatures of mutational processes using the SigProfiler suite"**
-(Nature Protocols).
+Runnable example for the protocol manuscript **"Profiling signatures of mutational processes using the SigProfiler suite"**.
 
 The protocol is demonstrated in the paper on 37 lung adenocarcinomas from the PCAWG cohort. Those
 mutation calls are not public, so this repository ships a **synthetic dataset** derived from them,
 together with the scripts for every step of the protocol and the output they produce. The point is to
-let you run the workflow end to end, check that your installation behaves, and compare your output
-with ours — without applying for data access first.
+let you run the workflow end to end, check that your installation behaves, and compare your output.
 
 ## The synthetic dataset
 
@@ -22,7 +20,7 @@ mutational profile. Two consequences, and they matter:
   dataset are identical to those of the original tumours; SBS-288 differs by 6 mutations out of
   1,338,192. Signature extraction, decomposition and assignment therefore reproduce the published
   results.
-- **The spatial distribution is destroyed.** The dataset *is* a simulated null background, so it
+- **The spatial distribution is destroyed.** The dataset is a simulated null background, so it
   cannot demonstrate any method that looks at where mutations fall in the genome. That rules out
   clustered-mutation detection (SigProfilerClusters) and topographical analysis
   (SigProfilerTopography).
@@ -97,7 +95,7 @@ full extraction.
 
 `step6.py`, `step7.py`, `step15.py` and `step16.py` are included for reference and `run_example.sh`
 does not call them. SigProfilerClusters and SigProfilerTopography both compare the observed genomic
-distribution of mutations against a simulated null background, and this dataset *is* that background:
+distribution of mutations against a simulated null background, and this dataset is that background:
 there is no clustering to detect and no departure from the background to measure. These branches need
 real somatic mutation data that retains its native spatial distribution.
 
