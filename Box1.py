@@ -1,4 +1,3 @@
-######### Box 1: Multimodal SBS+ID de novo signature extraction
 import pandas as pd
 
 sbs = pd.read_csv("LUAD_res/SBS/LUAD_US.SBS96.all", sep = "\t", index_col = 0)
@@ -20,7 +19,8 @@ if __name__ == "__main__":
 							 maximum_signatures = 10,
 							 nmf_replicates = 100,
 							 cpu = 30,
-							 gpu = False)
+							 gpu = False,
+							 seeds = "Seeds.txt")
 
 	denovo = pd.read_csv("LUAD_US_extraction_multimodal/CH179/Suggested_Solution/CH179_De-Novo_Solution/Signatures/CH179_De-Novo_Signatures.txt",
 						 sep = "\t", index_col = 0)

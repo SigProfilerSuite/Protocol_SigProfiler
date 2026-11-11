@@ -10,4 +10,5 @@ if __name__ == "__main__":
 							 maximum_signatures = 10, 
 							 nmf_replicates = 100, 
 							 cpu = 30, 
-							 gpu = False)
+							 gpu = False,
+							 seeds = "Seeds.txt")

@@ -8,3 +8,12 @@ Analyze.cosmic_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all",
 				   genome_build = "GRCh37", 
 				   export_probabilities_per_mutation = False, 
 				   collapse_to_SBS96 = False)
+
+Analyze.cosmic_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all", 
+				   output = "LUAD_decomposed_assignment", 
+				   input_type = "matrix", 
+				   context_type = "288", 
+				   signature_database = "LUAD_US_optimized_decomposition/Decompose_Solution/Signatures/Decompose_Solution_Signatures.txt", 
+				   genome_build = "GRCh37", 
+				   export_probabilities_per_mutation = False, 
+				   collapse_to_SBS96 = True)

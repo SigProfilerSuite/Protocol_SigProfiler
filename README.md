@@ -74,10 +74,13 @@ These are the steps it runs — the ones the synthetic data support:
 | 8 | `step8_288.py`, `step8_1536.py` | de novo extraction, SBS-288 and SBS-1536 |
 | 10 | `step10.py` | decomposition into COSMIC reference signatures |
 | 11 | `step11.py` | decomposition excluding signature subgroups |
-| 12 | `step12.py` | assignment of the de novo signatures to samples |
+| 12 | `step12.py` | assignment of the de novo and of the decomposed signatures to samples |
 | 13 | `step13.py` | refitting the full COSMIC catalogue to two samples |
 | 14 | `step14.py` | assignment of signatures to individual mutations |
 | 17 | `step17.py` | SBS, ID, DBS, CN and SV profile plots |
+
+Step 9, choosing the number of signatures, has no script: it is done by inspecting the selection plot
+and the solution statistics written by Step 8.
 
 To run a single step instead:
 
@@ -89,7 +92,10 @@ Scripts use paths relative to the repository root, so run them from there.
 
 `Box1.py` is an optional extra: the multimodal SBS+ID extraction described in Box 1 of the paper. It
 needs `step5.py` to have run first, and it is not part of `run_example.sh` because it adds a second
-full extraction.
+full extraction. It writes `LUAD_res/LUAD_US.SBS96_ID83.all` and `LUAD_US_extraction_multimodal/`.
+The SBS-96 and ID-83 components it produces can be decomposed into COSMIC reference signatures as in
+`step10.py`, using `LUAD_res/SBS/LUAD_US.SBS96.all` and `input_example/matrices/LUAD.ID83.all` as the
+samples matrices.
 
 ### Steps that are not run
 
@@ -110,6 +116,7 @@ LUAD_US_extraction_1536/                    step8   de novo extraction, SBS-1536
 LUAD_US_decomposition/                      step10  decomposition into COSMIC signatures
 LUAD_US_optimized_decomposition/            step11  decomposition excluding subgroups
 LUAD_de_novo_decomposition/                 step12  de novo signatures assigned to samples
+LUAD_decomposed_assignment/                 step12  decomposed signatures assigned to samples
 LUAD_cosmic_refitting/                      step13  COSMIC catalogue refitted to 2 samples
 LUAD_decomposed_assignment_to_mutations/    step14  per-mutation signature probabilities
 LUAD_plots/                                 step17  mutational profile plots
@@ -118,7 +125,8 @@ LUAD_plots/                                 step17  mutational profile plots
 `step14.py` also creates `input_example/somatic_mutation/input/` and
 `input_example/somatic_mutation/output/`. These are intermediate files, not results.
 
-Reference results are archived in `expected_output.zip`.
+Reference results are archived in `expected_output.zip`. They were produced by `run_example.sh`
+followed by `Box1.py`, with the seed file described under *Random seeds*.
 
 ## Comparing your results with the archived output
 
@@ -127,12 +135,23 @@ Reference results are archived in `expected_output.zip`.
 > genome. The extraction and assignment results behind Figure 4 are reproduced in substance, but not
 > to the last decimal — see below.
 
+De novo extraction uses stochastic NMF optimisation. The scripts fix its random seed (see below), but
+on a different machine exact values will still not reproduce. Signature counts, extracted profiles and
+assigned exposures should be very close; signature labels, their order, per-signature stability
+scores and the last decimal places of the activities may differ. Treat a different *number* of
+selected signatures as a result worth investigating, and small numerical differences as expected.
 
-De novo extraction uses stochastic NMF optimisation, so exact values will not reproduce. Signature
-counts, extracted profiles and assigned exposures should be very close; signature labels, their
-order, per-signature stability scores and the last decimal places of the activities will differ
-between runs. Treat a different *number* of selected signatures as a result worth investigating, and
-small numerical differences as expected.
+### Random seeds
+
+The three extraction scripts (`step8_288.py`, `step8_1536.py` and `Box1.py`) pass
+`seeds = "Seeds.txt"` to SigProfilerExtractor, so every run starts from the same random seed instead
+of a new random one. `Seeds.txt` is in the repository root, and all the archived extractions in
+`expected_output.zip` were run with it. SigProfilerExtractor also copies the seed it used to
+`Seeds.txt` inside each extraction output directory.
+
+A fixed seed makes reruns on the same machine and software versions repeatable. It does not
+guarantee identical numbers on a different machine: the number of CPUs, the numerical libraries and
+the use of a GPU still introduce small differences, so the comparison criteria above still apply.
 
 ## Troubleshooting
 
