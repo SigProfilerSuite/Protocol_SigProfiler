@@ -3,7 +3,7 @@
 Runnable example for the protocol manuscript **"Profiling signatures of mutational processes using the SigProfiler suite"**.
 
 The protocol is demonstrated in the paper on 37 lung adenocarcinomas from the PCAWG cohort. Those
-mutation calls are not public, so this repository ships a **synthetic dataset** derived from them,
+mutation calls are under controlled access, so this repository ships a **synthetic dataset** derived from them,
 together with the scripts for every step of the protocol and the output they produce. The point is to
 let you run the workflow end to end, check that your installation behaves, and compare your output.
 
@@ -88,6 +88,10 @@ conda run --name sigprofiler --no-capture-output python step5.py
 ```
 
 Scripts use paths relative to the repository root, so run them from there.
+
+The example is whole-genome data, so every call that accepts an `exome` parameter sets
+`exome = False` explicitly. For whole-exome data, set `exome = True` in all of them, and keep the same
+setting across dependent steps.
 
 `Box1.py` is an optional extra: the multimodal SBS+ID extraction described in Box 1 of the paper. It
 needs `step5.py` to have run first, and it is not part of `run_example.sh` because it adds a second
