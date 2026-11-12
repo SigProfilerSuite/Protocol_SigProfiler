@@ -14,4 +14,5 @@ topography.runAnalyses(genome = "GRCh37",
 	transcription_strand_bias = True, 
 	processivity = True, 
 	step2_gen_sim_data = False, 
-	mutation_types = ["SBS"])
+	mutation_types = ["SBS"],
+	exome = False)

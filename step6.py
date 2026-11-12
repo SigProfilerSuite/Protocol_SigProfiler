@@ -5,4 +5,5 @@ sigSim.SigProfilerSimulator(project = "LUAD_US",
 							genome = "GRCh37", 
 							contexts = ["96"], 
 							simulations = 100, 
-							chrom_based = True)
+							chrom_based = True,
+							exome = False)

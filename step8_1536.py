@@ -11,4 +11,5 @@ if __name__ == "__main__":
 							 nmf_replicates = 100, 
 							 cpu = 30, 
 							 gpu = False,
-							 seeds = "Seeds.txt")
+							 seeds = "Seeds.txt",
+							 exome = False)

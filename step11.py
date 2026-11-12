@@ -5,4 +5,5 @@ Analyze.decompose_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all",
 					  signatures = "LUAD_US_extraction_288/SBS288/Suggested_Solution/SBS288_De-Novo_Solution/Signatures/SBS288_De-Novo_Signatures.txt", 
 					  genome_build = "GRCh37", 
 					  cosmic_version = 3.6, 
-					  exclude_signature_subgroups = ["MMR_deficiency_signatures","POL_deficiency_signatures","HR_deficiency_signatures", "UV_signatures"])
+					  exclude_signature_subgroups = ["MMR_deficiency_signatures","POL_deficiency_signatures","HR_deficiency_signatures", "UV_signatures"],
+					  exome = False)

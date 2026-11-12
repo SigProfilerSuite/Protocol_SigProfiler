@@ -7,7 +7,8 @@ Analyze.cosmic_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all",
 				   signature_database = "LUAD_US_extraction_288/SBS288/Suggested_Solution/SBS288_De-Novo_Solution/Signatures/SBS288_De-Novo_Signatures.txt", 
 				   genome_build = "GRCh37", 
 				   export_probabilities_per_mutation = False, 
-				   collapse_to_SBS96 = False)
+				   collapse_to_SBS96 = False,
+				   exome = False)
 
 Analyze.cosmic_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all", 
 				   output = "LUAD_decomposed_assignment", 
@@ -16,4 +17,5 @@ Analyze.cosmic_fit(samples = "LUAD_res/SBS/LUAD_US.SBS288.all",
 				   signature_database = "LUAD_US_optimized_decomposition/Decompose_Solution/Signatures/Decompose_Solution_Signatures.txt", 
 				   genome_build = "GRCh37", 
 				   export_probabilities_per_mutation = False, 
-				   collapse_to_SBS96 = True)
+				   collapse_to_SBS96 = True,
+				   exome = False)

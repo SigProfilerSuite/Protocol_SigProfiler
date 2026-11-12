@@ -7,4 +7,5 @@ Analyze.cosmic_fit(samples = "input_example/refitting/refitting_example.txt",
 				   genome_build = "GRCh37",
 				   cosmic_version = 3.6,
 				   export_probabilities_per_mutation = False,
-				   collapse_to_SBS96 = False)
+				   collapse_to_SBS96 = False,
+				   exome = False)

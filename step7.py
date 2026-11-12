@@ -7,4 +7,5 @@ sigCl.analysis(project = "LUAD_US",
 			   input_path = "LUAD_res/", 
 			   subClassify = True, 
 			   max_cpu = 5, 
-			   includedVAFs = False)
+			   includedVAFs = False,
+			   exome = False)

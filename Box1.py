@@ -20,7 +20,8 @@ if __name__ == "__main__":
 							 nmf_replicates = 100,
 							 cpu = 30,
 							 gpu = False,
-							 seeds = "Seeds.txt")
+							 seeds = "Seeds.txt",
+							 exome = False)
 
 	denovo = pd.read_csv("LUAD_US_extraction_multimodal/CH179/Suggested_Solution/CH179_De-Novo_Solution/Signatures/CH179_De-Novo_Signatures.txt",
 						 sep = "\t", index_col = 0)
