@@ -16,10 +16,9 @@ It was produced with SigProfilerSimulator from the original tumours, simulating 
 context. **The simulator randomises the genomic position of every mutation** while preserving its
 mutational profile. Two consequences, and they matter:
 
-- **The mutational matrices are preserved.** The SBS-96 and SBS-1536 matrices derived from this
-  dataset are identical to those of the original tumours; SBS-288 differs by 6 mutations out of
-  1,338,192. Signature extraction, decomposition and assignment therefore reproduce the published
-  results.
+- **The mutational matrices are preserved.** The SBS-96, SBS-288 and SBS-1536 matrices derived from
+  this dataset are identical to those of the original tumours. Signature extraction, decomposition
+  and assignment therefore reproduce the published results.
 - **The spatial distribution is destroyed.** The dataset is a simulated null background, so it
   cannot demonstrate any method that looks at where mutations fall in the genome. That rules out
   clustered-mutation detection (SigProfilerClusters) and topographical analysis
@@ -135,8 +134,8 @@ followed by `Box1.py`, with the seed file described under *Random seeds*.
 > genome. The extraction and assignment results behind Figure 4 are reproduced in substance, but not
 > to the last decimal — see below.
 
-De novo extraction uses stochastic NMF optimisation. The scripts fix its random seed (see below), but
-on a different machine exact values will still not reproduce. Signature counts, extracted profiles and
+The scripts fix the random seed of the de novo extraction (see below), so repeated runs on the same
+computer give the same results. On a different computer exact values may still not reproduce. Signature counts, extracted profiles and
 assigned exposures should be very close; signature labels, their order, per-signature stability
 scores and the last decimal places of the activities may differ. Treat a different *number* of
 selected signatures as a result worth investigating, and small numerical differences as expected.
@@ -149,9 +148,13 @@ of a new random one. `Seeds.txt` is in the repository root, and all the archived
 `expected_output.zip` were run with it. SigProfilerExtractor also copies the seed it used to
 `Seeds.txt` inside each extraction output directory.
 
-A fixed seed makes reruns on the same machine and software versions repeatable. It does not
-guarantee identical numbers on a different machine: the number of CPUs, the numerical libraries and
-the use of a GPU still introduce small differences, so the comparison criteria above still apply.
+> **Warning.** The fixed seed makes reruns on the same computer identical, but results can still
+> change on a different computer (hardware, numerical libraries, number of CPU cores). Even with the
+> same `Seeds.txt`, the extracted signatures can then differ in the fifth decimal place, and such small
+> differences can be enough to change which reference signatures are selected when a de novo signature
+> is decomposed. For example, two runs of the SBS-288 extraction with the same seed decomposed SBS288B
+> as SBS4 + SBS5 in one case and SBS4 + SBS5 + SBS92 in the other. Compare decompositions by
+> their main components and their cosine similarity, not by an exact list of signatures.
 
 ## Troubleshooting
 
@@ -163,7 +166,9 @@ or use `run_example.sh`, which changes into it.
 
 **Results differ from `expected_output.zip`** — see *Comparing your results with the archived
 output*. Check the package versions first: different SigProfiler releases default to different
-COSMIC catalogue versions.
+COSMIC catalogue versions. On a different computer, a decomposition can gain or lose a reference
+signature even with the fixed seed, when two similar reference signatures explain the de novo
+signature almost equally well (see the warning under *Random seeds*).
 
 **A rerun behaves differently from the first run** — delete the generated directories listed under
 *What the run produces*, including `input_example/somatic_mutation/input/` and
